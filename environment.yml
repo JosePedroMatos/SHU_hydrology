@@ -1,0 +1,43 @@
+#version 1.0 2025.03.01
+#
+#conda env create -f environment.yml
+#
+#
+#conda update -n base conda
+#conda install -n base conda-libmamba-solver
+#conda config --set solver libmamba
+#
+#
+#conda env update -f environment --prune
+#conda remove --name shu_hydrolgy --all
+#conda env export > "shu_hydrolgy_real.yml"
+#
+#conda activate shu_hydrolgy
+#python -m ipykernel install --user --name=shu_hydrolgy
+
+name: shu_hydrolgy
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - cdsapi
+  - xarray
+  - cfgrib
+  - gdal
+  - scikit-learn
+  - pandas
+  - matplotlib
+  - numpy<2
+  - scipy
+  - netcdf4
+  - statsmodels
+  - cartopy
+  - ipykernel
+  - pip
+  - pip:
+    - BeautifulSoup4
+    - seaborn
+    - xlwings
+    - openpyxl
+    - wheel
+    - https://raw.githubusercontent.com/JosePedroMatos/Tethys-meteoraster/main/dist/meteoraster-0.2-py3-none-any.whl
